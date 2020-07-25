@@ -1,2 +1,3 @@
+
 info_general = <hr>[0-9A-Z= ]+<br>
 puntajes_formato_antiguo  = (\d{2,3}|(\s){4}|)<br>
