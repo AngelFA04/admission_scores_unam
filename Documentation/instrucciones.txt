@@ -1,0 +1,16 @@
+1. Primero se van a obtener todos los links de los  PDFs de los links con las convocatorias.
+
+2. Una vez obtenidos links de los PDFs se van a obtener todos los links de los resultados que están
+dentro de los PDFs. Se va a usar alguna herramienta ajena a Python, probablemente algun lector 
+interno de algun navegador para poder obtener con un XPATH los links de los resultados.
+
+3. Una vez con los links de los resultados de cada area se va a acceder a los resultados de cada 
+una de las carreras.
+
+4. Al estar en los resultados de cada carrera se van a obtener todos los aciertos,
+así como la información general del proceso de la carrera (cantidad de aspirantes, aciertos minimos, etc)
+
+5. Se van a almacenar todos los datos en archivos JSON que posteriormente se guardaran en alguna base 
+de datos (aun por definirse si se hará). 
+
+6. Una vez almacenados se van a procesar usando Pandas en una Jupyter Notebook

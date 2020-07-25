@@ -1,0 +1,20 @@
+Flujo de links y XPaths:
+
+1.https://www.escolar.unam.mx/Febrero2020/index.html, '//a[contains(@href, "resultados")]/@href'
+2.http://escolar1.unam.mx/Febrero2020/resultados.pdf, '//a[contains(@title, "resultados")]'
+
+
+3.https://www.dgae.unam.mx/Febrero2020/resultados/15.html, 
+    De cada response.xpath('//p[@class="post-meta"]/a/text()').getall() se va a extraer lo siguiente:
+        nombre_carrera = c.xpath('./h3/text()').get()
+        nombre_facultad: c.xpath('.//p[@class="post-meta"]/a/text()').getall()
+        links_resultados_por_facultad: './/p[@class="post-meta"]/a/@href', 
+
+        for c in carreras:
+    ...:     titulo = c.xpath('./h3/text()').get()
+    ...:     nombre_fac = c.xpath('.//p[@class="post-meta"]/a/text()').getall()
+    ...:     links = c.xpath('.//p[@class="post-meta"]/a/@href').getall()
+    ...:     print(titulo)
+    ...:     print(nombre_fac)
+    ...:     print(links)
+    ...:     print('-------------\n')
