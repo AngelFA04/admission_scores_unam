@@ -6,8 +6,13 @@
 import scrapy
 
 
-class UnamScoresItem(scrapy.Item):
+class ScoresUnamItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    name_career = scrapy.Field()
+    pass
+
+class LinkArea():
+    pass
+
+class Career():
     pass
