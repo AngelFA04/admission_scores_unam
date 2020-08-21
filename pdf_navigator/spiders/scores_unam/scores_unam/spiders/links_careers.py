@@ -1,16 +1,22 @@
 import scrapy
+from ..items import Career
 
-
-class DataCareer(scrapy.Spider):
+class SpiderDataCareer(scrapy.Spider):
     name = 'careers'
     
-    #URLs saved in CSV 
+    #URLs saved in CSV. Urls from each career
     start_urls = [
+
         'https://www.dgae.unam.mx/Febrero2020/resultados/26.html'
     ]
 
     def parse(self, response):
-
+        """
+        This function will receive all the links extracted from the spider links_areas
+        """
+        pass
+        
+        #All the next block should be in other function
         post_careers = response.xpath('//div[@class="post-preview"]')
         for post in post_careers:
             links_careers = post.xpath('./p/a[contains(@class, "btn btn-link")]/@href').getall()
@@ -26,6 +32,8 @@ class DataCareer(scrapy.Spider):
 
     def parse_career_page_new(self, response, *args, **kwargs):
         """
+        Method to extract all the scores from each career page. 
+        This one is designed for the new websites (2017-Present)
         """
         pass
         #Select everything not only the text
@@ -45,13 +53,20 @@ class DataCareer(scrapy.Spider):
         
         #Yield an item with the data
         name = response.xpath()
-        #item
-        yield 
-        {
-            name:'',
 
-        }
+        career = Career()
+        #Fill career with data
+        #career['area'] = ...
+        #career['name'] = ...
 
-    def parse_career_page_old(){
+        yield career
 
-    }
+
+    def parse_career_page_old():
+        """
+        Method to extract all the scores from each career page. 
+        This one is designed for the old websites (2010-2016).
+        This method will extract the data bases mostly in regex.
+        """
+
+    
